@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Encryption Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 10px solid #e30a0a;
+      border-radius: 4px;
+      background-color: #f2f2f2;
+    }
+
+    label, input, button {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #45a049;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4CAF50;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Password Encryption Tool</h1>
+    <img src="Untitled.png" width="200px" height="200px">
+    <label for="password">Password:</label>
+    <input type="password" id="password" placeholder="Enter your password">
+    <button onclick="encryptPassword()">Encrypt</button>
+    <label for="encrypted-password">Encrypted Password:</label>
+    <input type="text" id="encrypted-password" readonly>
+  </div>
+
+  <script>
+    function encryptPassword() {
+      var passwordInput = document.getElementById("password");
+      var encryptedPasswordInput = document.getElementById("encrypted-password");
+      var password = passwordInput.value;
+      
+      // Simple encryption algorithm (for demonstration purposes only)
+      var encryptedPassword = "";
+      for (var i = 0; i < password.length; i++) {
+        encryptedPassword += String.fromCharCode(password.charCodeAt(i) + 1);
+      }
+      
+      encryptedPasswordInput.value = encryptedPassword;
+    }
+  </script>
+</body>
+</html>
